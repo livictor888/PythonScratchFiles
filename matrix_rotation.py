@@ -1,11 +1,9 @@
-
-
 def rotate(matrix):
     rotated_matrix = []
     for number_row in matrix:
         new_row = []
-        for bit in number_row:
-            new_row.insert(0, bit)
+        for bit in range(len(number_row)):
+            new_row.insert(0, number_row[bit])
         rotated_matrix.append(new_row)
     return rotated_matrix
 

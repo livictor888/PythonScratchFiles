@@ -1,14 +1,25 @@
-def string_comp(string: str) -> str:
-
+def string_comp(input_string: str) -> str:
     current_character = ""
-    current_character_count = 0
+    current_character_count = ""
     output_string = ""
-    character_list = string.split("") // ['a', 'a', 'b', ...]
-    for character in range(len(character_list)):
-        if character_list[character] == current_character:
+
+    for character in range(len(input_string)):
+        if input_string[character] == current_character:
             current_character_count += 1
-    else:
-        output_string.append(current_character + current_character_count)
-        current_character = character_list[character]
-    current_character_count = 0
+        else:
+            output_string += (current_character + str(current_character_count))
+            current_character = input_string[character]
+            current_character_count = 1
+    output_string += (current_character + str(current_character_count))
+
     return output_string
+
+
+def main():
+    test_string = "aabcccccaaa"  # length 11
+    test_string2 = "abbcc"
+    print(string_comp(test_string))
+
+
+if __name__ == "__main__":
+    main()
